@@ -1,0 +1,10 @@
+SELECT * FROM Listings WHERE host_id IN (SELECT l1.host_id FROM Listings l1 JOIN Listings l2 on l1.host_id = l2.host_id AND l1.host_name != l2.host_name)
+SELECT * FROM Listings WHERE minimum_nights < 0 OR minimum_nights > 6 OR maximum_nights < 6
+SELECT bathrooms FROM Listings WHERE bathrooms < 1.5
+SELECT * FROM Listings WHERE accommodates < 4 OR beds < 2 OR price > 800.0
+SELECT * FROM Listings WHERE neighborhood != "Financial District" AND neighborhood != "Greenwich Village" AND neighborhood != "Soho" AND neighborhood != "Lower East Side" AND neighborhood != "Chinatown" AND neighborhood != "Hamilton" AND neighborhood = "Clinton" AND neighborhood != "Chelsea" AND neighborhood != "Midtown" AND neighborhood != "Stuyvesant Town" AND neighborhood != "Turtle Bay" AND neighborhood != "Upper West Side" AND neighborhood != "Inwood" AND neighborhood != "Upper East Side" AND neighborhood != "Central Harlem" AND neighborhood != "East Harlem" AND neighborhood != "Morningside Heights" AND neighborhood != "Washington Heights"
+SELECT * FROM Listings WHERE number_of_reviews <=10 OR review_scores_rating <= 80.0
+SELECT * FROM Listings WHERE room_type != "Entire home/apt"
+SELECT * FROM Listings WHERE picture_url = ""
+SELECT * FROM Listings WHERE host_identity_verified = "f"
+SELECT * FROM Listings WHERE host_response_time = "within a day"
